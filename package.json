@@ -14,7 +14,7 @@
     "generate-figlet-fonts": "node scripts/generate-figlet-fonts.mjs",
     "convert-pixel-fonts": ".venv-fonts/bin/python scripts/ttf_to_flf.py && node scripts/generate-font-previews.mjs",
     "generate-font-previews": "node scripts/generate-font-previews.mjs",
-    "build": "vite build",
+    "build": "vite build && node scripts/build-static.mjs",
     "start": "srvx --prod -s dist/client dist/server/server.js",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
