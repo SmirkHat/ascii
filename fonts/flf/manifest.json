@@ -1,0 +1,163 @@
+[
+  {
+    "id": "Bitrimus",
+    "file": "Bitrimus.flf",
+    "source": "Bitrimus/Bitrimus.ttf",
+    "cell": 16,
+    "height": 10
+  },
+  {
+    "id": "Cairopixel",
+    "file": "Cairopixel.flf",
+    "source": "CairoPixel/Cairopixel.ttf",
+    "cell": 16,
+    "height": 10
+  },
+  {
+    "id": "DarkByte",
+    "file": "DarkByte.flf",
+    "source": "DarkByte/DarkByte.ttf",
+    "cell": 16,
+    "height": 14
+  },
+  {
+    "id": "Fortzilla-Italic",
+    "file": "Fortzilla-Italic.flf",
+    "source": "Fortzilla/Fortzilla-Italic.ttf",
+    "cell": 16,
+    "height": 16
+  },
+  {
+    "id": "Fortzilla-Light",
+    "file": "Fortzilla-Light.flf",
+    "source": "Fortzilla/Fortzilla-Light.ttf",
+    "cell": 16,
+    "height": 16
+  },
+  {
+    "id": "Fortzilla-Light-Italic",
+    "file": "Fortzilla-Light-Italic.flf",
+    "source": "Fortzilla/Fortzilla-Light-Italic.ttf",
+    "cell": 16,
+    "height": 16
+  },
+  {
+    "id": "Fortzilla-Regular",
+    "file": "Fortzilla-Regular.flf",
+    "source": "Fortzilla/Fortzilla-Regular.ttf",
+    "cell": 16,
+    "height": 16
+  },
+  {
+    "id": "Gridtile",
+    "file": "Gridtile.flf",
+    "source": "Gridtile/Gridtile.ttf",
+    "cell": 16,
+    "height": 16
+  },
+  {
+    "id": "HomeVideo-Bold",
+    "file": "HomeVideo-Bold.flf",
+    "source": "HomeVideo/HomeVideo-Bold.ttf",
+    "cell": 20,
+    "height": 18
+  },
+  {
+    "id": "HomeVideo-Regular",
+    "file": "HomeVideo-Regular.flf",
+    "source": "HomeVideo/HomeVideo-Regular.ttf",
+    "cell": 20,
+    "height": 16
+  },
+  {
+    "id": "Ithaca",
+    "file": "Ithaca.flf",
+    "source": "Ithaca/Ithaca.ttf",
+    "cell": 16,
+    "height": 13
+  },
+  {
+    "id": "Pixelated_Elegance",
+    "file": "Pixelated_Elegance.flf",
+    "source": "PixelatedElegance/Pixelated_Elegance.ttf",
+    "cell": 16,
+    "height": 15
+  },
+  {
+    "id": "Pixelbasel",
+    "file": "Pixelbasel.flf",
+    "source": "Pixelbasel/Pixelbasel.ttf",
+    "cell": 16,
+    "height": 14
+  },
+  {
+    "id": "PixeloidMono",
+    "file": "PixeloidMono.flf",
+    "source": "Pixeloid/PixeloidMono.ttf",
+    "cell": 9,
+    "height": 9
+  },
+  {
+    "id": "PixeloidSans",
+    "file": "PixeloidSans.flf",
+    "source": "Pixeloid/PixeloidSans.ttf",
+    "cell": 9,
+    "height": 9
+  },
+  {
+    "id": "PixeloidSans-Bold",
+    "file": "PixeloidSans-Bold.flf",
+    "source": "Pixeloid/PixeloidSans-Bold.ttf",
+    "cell": 9,
+    "height": 9
+  },
+  {
+    "id": "Pixelzone",
+    "file": "Pixelzone.flf",
+    "source": "Pixelzone/Pixelzone.ttf",
+    "cell": 16,
+    "height": 8
+  },
+  {
+    "id": "PublicPixel",
+    "file": "PublicPixel.flf",
+    "source": "PublicPixel/PublicPixel.ttf",
+    "cell": 8,
+    "height": 7
+  },
+  {
+    "id": "RasterForge",
+    "file": "RasterForge.flf",
+    "source": "RasterForge/RasterForge.ttf",
+    "cell": 8,
+    "height": 7
+  },
+  {
+    "id": "Vaticanus",
+    "file": "Vaticanus.flf",
+    "source": "Vaticanus/Vaticanus.ttf",
+    "cell": 16,
+    "height": 14
+  },
+  {
+    "id": "Yazo",
+    "file": "Yazo.flf",
+    "source": "Yazo/Yazo.ttf",
+    "cell": 32,
+    "height": 9
+  },
+  {
+    "id": "Zeitmax-Italic",
+    "file": "Zeitmax-Italic.flf",
+    "source": "Zeitmax/Zeitmax-Italic.ttf",
+    "cell": 16,
+    "height": 16
+  },
+  {
+    "id": "Zeitmax-Regular",
+    "file": "Zeitmax-Regular.flf",
+    "source": "Zeitmax/Zeitmax-Regular.ttf",
+    "cell": 16,
+    "height": 16
+  }
+]

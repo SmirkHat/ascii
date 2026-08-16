@@ -1,0 +1,268 @@
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/* Full-width mono fallback kept for block characters in the ASCII preview. */
+@font-face {
+  font-family: 'JetBrains Mono ASCII';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
+/*
+ * System-first dark mode.
+ *
+ * The `dark:` variant matches when:
+ *   1. an explicit `.dark` class is set on <html> (JS override), or
+ *   2. the OS prefers dark AND no explicit `.light` override is set.
+ *
+ * This keeps the baseline theme usable without JavaScript and avoids FOUC.
+ */
+@custom-variant dark {
+  &:where(.dark, .dark *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not(.light), :root:not(.light) *) {
+      @slot;
+    }
+  }
+}
+
+@theme inline {
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono:
+    'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-ascii:
+    'JetBrains Mono ASCII', 'Geist Mono Variable', ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Compatibility tokens used by the generated shadcn components. */
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-code: var(--code);
+  --color-code-foreground: var(--code-foreground);
+  --color-code-highlight: var(--code-highlight);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* SmirkHat brand tokens — light (default). */
+:root {
+  color-scheme: light;
+
+  --background: #f7f7f5;
+  --foreground: #171717;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
+  --primary: #d97706;
+  --primary-foreground: #171717;
+  --secondary: #f0efe9;
+  --secondary-foreground: #171717;
+  --muted: #f0efe9;
+  --muted-foreground: #525252;
+  --accent: #fef3c7;
+  --accent-foreground: #92400e;
+  --destructive: #dc2626;
+  --destructive-foreground: #fafafa;
+  --border: #e5e5e0;
+  --input: #e5e5e0;
+  --ring: #d97706;
+  --radius: 0.75rem;
+
+  /* Supporting semantic colors for reusable UI primitives. */
+  --info: #2563eb;
+  --info-foreground: #1d4ed8;
+  --success: #059669;
+  --success-foreground: #047857;
+  --warning: #d97706;
+  --warning-foreground: #b45309;
+  --code: #ffffff;
+  --code-foreground: #171717;
+  --code-highlight: color-mix(in srgb, #000000 4%, transparent);
+  --sidebar: #f7f7f5;
+  --sidebar-accent: color-mix(in srgb, #000000 4%, transparent);
+  --sidebar-accent-foreground: #171717;
+  --sidebar-border: color-mix(in srgb, #000000 6%, transparent);
+  --sidebar-foreground: #525252;
+  --sidebar-primary: #171717;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-ring: #a3a3a3;
+}
+
+/* SmirkHat brand tokens — dark (system baseline, no JS required). */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+
+    --background: #171717;
+    --foreground: #e5e5e5;
+    --card: #222222;
+    --card-foreground: #e5e5e5;
+    --popover: #262626;
+    --popover-foreground: #e5e5e5;
+    --primary: #f59e0b;
+    --primary-foreground: #171717;
+    --secondary: #222222;
+    --secondary-foreground: #e5e5e5;
+    --muted: #2a2a2a;
+    --muted-foreground: #a3a3a3;
+    --accent: #92400e;
+    --accent-foreground: #fde68a;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --border: #404040;
+    --input: #404040;
+    --ring: #f59e0b;
+
+    --info: #60a5fa;
+    --info-foreground: #93c5fd;
+    --success: #34d399;
+    --success-foreground: #6ee7b7;
+    --warning: #f59e0b;
+    --warning-foreground: #fcd34d;
+    --code: #262626;
+    --code-foreground: #e5e5e5;
+    --code-highlight: color-mix(in srgb, #ffffff 4%, transparent);
+    --sidebar: #191919;
+    --sidebar-accent: color-mix(in srgb, #ffffff 4%, transparent);
+    --sidebar-accent-foreground: #e5e5e5;
+    --sidebar-border: color-mix(in srgb, #ffffff 5%, transparent);
+    --sidebar-foreground: #a3a3a3;
+    --sidebar-primary: #e5e5e5;
+    --sidebar-primary-foreground: #171717;
+    --sidebar-ring: #737373;
+  }
+}
+
+/* SmirkHat brand tokens — dark (explicit JS override). */
+:root.dark {
+  color-scheme: dark;
+
+  --background: #171717;
+  --foreground: #e5e5e5;
+  --card: #222222;
+  --card-foreground: #e5e5e5;
+  --popover: #262626;
+  --popover-foreground: #e5e5e5;
+  --primary: #f59e0b;
+  --primary-foreground: #171717;
+  --secondary: #222222;
+  --secondary-foreground: #e5e5e5;
+  --muted: #2a2a2a;
+  --muted-foreground: #a3a3a3;
+  --accent: #92400e;
+  --accent-foreground: #fde68a;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #404040;
+  --input: #404040;
+  --ring: #f59e0b;
+
+  --info: #60a5fa;
+  --info-foreground: #93c5fd;
+  --success: #34d399;
+  --success-foreground: #6ee7b7;
+  --warning: #f59e0b;
+  --warning-foreground: #fcd34d;
+  --code: #262626;
+  --code-foreground: #e5e5e5;
+  --code-highlight: color-mix(in srgb, #ffffff 4%, transparent);
+  --sidebar: #191919;
+  --sidebar-accent: color-mix(in srgb, #ffffff 4%, transparent);
+  --sidebar-accent-foreground: #e5e5e5;
+  --sidebar-border: color-mix(in srgb, #ffffff 5%, transparent);
+  --sidebar-foreground: #a3a3a3;
+  --sidebar-primary: #e5e5e5;
+  --sidebar-primary-foreground: #171717;
+  --sidebar-ring: #737373;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply bg-background;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre,
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer components {
+  .font-review-card {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 18rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
